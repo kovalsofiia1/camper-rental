@@ -1,0 +1,11 @@
+.header{
+    width: 100%;
+    background-color: rgb(228, 121, 121);
+    padding: 12px;
+    
+}
+
+.navigation{
+    display: flex;
+    gap: 12px;
+}
