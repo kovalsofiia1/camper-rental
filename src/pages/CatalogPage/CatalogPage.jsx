@@ -1,9 +1,11 @@
-import React from 'react'
+import CamperList from '../../components/CamperList/CamperList'
+
+import campers from '../../db/campers.json';
 
 export default function CatalogPage() {
   return (
     <div>
-      Catalog
+      <CamperList campers={campers} />
     </div>
   )
 }
