@@ -3,6 +3,7 @@ import css from './CamperModal.module.css';
 import spritePath from '../../assets/icons/icons.svg';
 import FeaturesList from '../FeaturesList/FeaturesList';
 import { getKey } from '../CamperItem/helpers/handleFeatures';
+import BookingForm from '../BookingForm/BookingForm';
 
 export default function CamperModal({ camper, onClose }) {
     const [activeTab, setActiveTab] = useState('features');
@@ -115,7 +116,8 @@ export default function CamperModal({ camper, onClose }) {
                                       <div className={css.detail}><span>Consumption</span><span>{ camper.consumption }</span></div>
                                   </div>
                             </div>
-                        </div>
+                          </div>
+                          <BookingForm/>
                       </div>
                         )}
 
