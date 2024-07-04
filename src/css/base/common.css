@@ -1,24 +1,27 @@
 body {
   margin: 0;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   color: var(--primary);
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-button{
+button {
   background-color: var(--accent-1);
   border: none;
   padding: 16px 40px;
-  width:fit-content;
+  width: fit-content;
   border-radius: 200px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   color: var(--white);
+  transition: all 0.2s ease-in;
 }
 
-button:hover, button:active, button:focus{
-   background-color: var(--accent-1-dark);
+button:hover,
+button:active,
+button:focus {
+  background-color: var(--accent-1-dark);
 }

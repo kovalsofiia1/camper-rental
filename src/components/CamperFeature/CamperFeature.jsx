@@ -1,4 +1,3 @@
-import React from 'react'
 import css from './CamperFeature.module.css';
 import spritePath from '../../assets/icons/icons.svg';
 

@@ -1,52 +1,26 @@
 
 import css from './CamperItem.module.css'
 import spritePath from '../../assets/icons/icons.svg';
-import CamperFeature from '../CamperFeature/CamperFeature';
+// import CamperFeature from '../CamperFeature/CamperFeature';
+import CamperModal from '../CamperModal/CamperModal';
+import { useState } from 'react';
+
+// import { handleDetails } from './helpers/handleFeatures';
+import FeaturesList from '../FeaturesList/FeaturesList';
 
 
-
-const handleDetails = (details) => {
-    const resDetails = {
-        adults: details["adults"],
-        children: details["children"],
-        engine: details['engine'],
-        transmission: details['transmission'],
-        form: details['form'],
-        ...details['details']
-    }
-
-    const result = {}
-    
-    Object.keys(resDetails).forEach((key) => {
-        if (['engine', 'form', 'transmission'].includes(key)) {
-            result[resDetails[key]] = 1
-        }
-        else {
-            result[key] = resDetails[key]
-        }
-    })
-
-    console.log(' result ',result);
-    return result
-
-}
-
-const capitalizeFirstLetter = (string) => {
-  return string.charAt(0).toUpperCase() + string.slice(1);
-};
-    
-const getKey = (key) => {
-    const exceptions = {
-        'airConditioner': 'Air conditioner',
-        'panelTruck': 'Panel truck',
-        'fullyIntegrated': 'Fully integrated'
-    }
-
-    return key in exceptions ? exceptions[key] : capitalizeFirstLetter(key) 
-}
 export default function CamperItem({ camper }) {
     
-    const features = handleDetails(camper);
+    
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const handleShowMore = () => {
+        setIsModalOpen(true);
+    }
+
+    const handleCloseModal = () => {
+        setIsModalOpen(false);
+    }
+
   return (
     <div className={css.container}>
         <div className={css.imgContainer}>
@@ -97,12 +71,15 @@ export default function CamperItem({ camper }) {
 
               <p className={css.description}>{ camper.description}</p>
               <div className={css.features}>
-                  {Object.keys(features).map((key) => (
+                  {/* {Object.keys(features).map((key) => (
                       features[key]!==0 && <CamperFeature icon={key} key={key} text={`${features[key]!==1 ? features[key]: ''} ${getKey(key)}`} />
-                    ))}
+                    ))} */}
+                  <FeaturesList camper={ camper } />
               </div>
-              <button>Show more</button>
-        </div>
+              
+              <button onClick={handleShowMore}>Show more</button>
+          </div>
+          {isModalOpen && <CamperModal camper={camper} onClose={ handleCloseModal } />}
     </div>
   )
 }

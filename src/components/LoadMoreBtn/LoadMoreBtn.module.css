@@ -1,0 +1,15 @@
+.btn {
+  background-color: transparent;
+  border: 1px solid rgba(71, 84, 103, 0.2);
+  padding: 16px 32px;
+  color: var(--primary);
+  transition: all 0.5s ease-in;
+  margin-bottom: 20px;
+}
+
+.btn:active,
+.btn:focus,
+.btn:hover {
+  background-color: transparent;
+  border: 1px solid var(--accent-1);
+}

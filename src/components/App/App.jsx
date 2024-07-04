@@ -1,11 +1,16 @@
 import { useState } from 'react'
 import ReactDOM from "react-dom/client";
+import { Suspense, lazy } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import './App.css'
-import CatalogPage from '../../pages/CatalogPage/CatalogPage';
-import FavoritesPage from '../../pages/FavoritesPage/FavoritesPage';
-import HomePage from '../../pages/HomePage/HomePage';
+// import CatalogPage from '../../pages/CatalogPage/CatalogPage';
+// import FavoritesPage from '../../pages/FavoritesPage/FavoritesPage';
+// import HomePage from '../../pages/HomePage/HomePage';
 import Layout from '../Layout/Layout';
+
+const HomePage = lazy(() => import('../../pages/HomePage/HomePage'));
+const CatalogPage = lazy(() => import('../../pages/CatalogPage/CatalogPage'));
+const FavoritesPage = lazy(() => import('../../pages/FavoritesPage/FavoritesPage'));
 
 function App() {
 

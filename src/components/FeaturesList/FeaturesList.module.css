@@ -1,0 +1,7 @@
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  height: 96px;
+  overflow-y: scroll;
+}

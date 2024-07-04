@@ -1,14 +1,16 @@
-.featureItem{
-    background-color: var(--secondary);
-    padding: 12px 18px;
-    width: fit-content;
-    border-radius: 100px;
-    display: flex;
-    gap: 8px;
-    align-items: center;
+.featureItem {
+  background-color: var(--secondary);
+  padding: 12px 18px;
+  width: fit-content;
+  border-radius: 100px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  /* height: fit-content; */
 }
 
-.icon{
-    fill: transparent;
-    stroke: var(--primary);
+.icon {
+  fill: transparent;
+  stroke: var(--primary);
 }

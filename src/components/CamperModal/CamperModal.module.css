@@ -1,0 +1,208 @@
+.backdrop {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  background-color: rgba(17, 18, 19, 0.4);
+}
+
+.modal {
+  background-color: var(--white);
+  width: 982px;
+  max-height: calc(100vh - 80px);
+
+  /* position: relative; */
+  display: flex;
+  flex-direction: column;
+  margin: 40px auto;
+  padding: 40px;
+  border-radius: 20px;
+}
+
+.scrollable {
+  overflow-y: auto;
+  flex: 1;
+  padding-right: 8px;
+}
+
+.btn,
+.btn:hover,
+.btn:active,
+.btn:focus {
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+  background-color: transparent;
+  padding: 0;
+}
+
+.icon {
+  fill: transparent;
+  stroke: var(--primary);
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.imagesContainer {
+  display: flex;
+  gap: 16px;
+  padding: 0 0 24px;
+  overflow-x: auto;
+  flex-wrap: nowrap;
+}
+
+.imgContainer {
+  width: 290px;
+  height: 310px;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0f0f0;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.descriptionContainer {
+  max-width: 526px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 8px;
+  padding-bottom: 24px;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.rating {
+  text-decoration: underline;
+}
+
+.description {
+  color: var(--primary-light);
+  text-align: left;
+  padding-bottom: 44px;
+}
+
+.icon {
+  fill: transparent;
+  stroke: var(--primary);
+}
+
+.ratingContainer {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.secondaryContainer {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.title {
+  font-size: 24px;
+  line-height: 1.2;
+  text-align: left;
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  height: 96px;
+  overflow-y: scroll;
+}
+
+.tabContainer {
+  display: flex;
+  gap: 40px;
+  padding-bottom: 24px;
+}
+
+.tabBtn {
+  position: relative;
+}
+
+.tabBtn.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -26px;
+  height: 4px;
+  background-color: var(--accent-1);
+  /* border-radius: 2px; */
+}
+
+.separator {
+  height: 1px;
+  width: 100%;
+  background-color: rgba(16, 24, 40, 0.2);
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  width: 430px;
+  height: fit-content;
+  padding-bottom: 44px;
+}
+
+.featuresContainer {
+  display: flex;
+  gap: 44px;
+  padding: 32px 0;
+}
+
+.titleDetails {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: left;
+}
+
+.vehicleDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.detailsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.detail {
+  display: flex;
+  justify-content: space-between;
+
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.4;
+}
