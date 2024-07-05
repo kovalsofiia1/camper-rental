@@ -4,13 +4,12 @@ import spritePath from '../../assets/icons/icons.svg';
 // import CamperFeature from '../CamperFeature/CamperFeature';
 import CamperModal from '../CamperModal/CamperModal';
 import { useState } from 'react';
-
+import clsx from 'clsx';
 // import { handleDetails } from './helpers/handleFeatures';
 import FeaturesList from '../FeaturesList/FeaturesList';
 
 
 export default function CamperItem({ camper }) {
-    
     
     const [isModalOpen, setIsModalOpen] = useState(false);
     const handleShowMore = () => {
@@ -47,7 +46,7 @@ export default function CamperItem({ camper }) {
               <div className={css.secondaryContainer}>
                   <div className={css.ratingContainer}>
                         <svg
-                                className={css.icon}
+                                className={clsx(css.icon, css.star)}
                                 width="16"
                                 height="16"
                                 aria-label="btn icon"

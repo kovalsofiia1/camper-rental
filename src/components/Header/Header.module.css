@@ -1,11 +1,42 @@
-.header{
-    width: 100%;
-    background-color: rgb(228, 121, 121);
-    padding: 12px;
-    
+.header {
+  width: 100%;
+  background-color: var(--secondary-light);
+  padding: 24px 48px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 1px 0 11px 0 var(--accent-1);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1px;
+
+  position: fixed;
 }
 
-.navigation{
-    display: flex;
-    gap: 12px;
+.navigation {
+  display: flex;
+  gap: 24px;
+  justify-content: end;
+}
+
+.link {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--primary);
+}
+.link:hover,
+.link:active,
+.link:focus {
+  text-decoration: underline;
+}
+
+.logoContainer {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.title {
+  font-size: 24px;
 }

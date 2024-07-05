@@ -13,7 +13,6 @@
   width: 982px;
   max-height: calc(100vh - 80px);
 
-  /* position: relative; */
   display: flex;
   flex-direction: column;
   margin: 40px auto;
@@ -111,6 +110,11 @@
   stroke: var(--primary);
 }
 
+.star {
+  fill: var(--accent-2);
+  stroke: var(--accent-2);
+}
+
 .ratingContainer {
   display: flex;
   gap: 8px;
@@ -155,7 +159,6 @@
   bottom: -26px;
   height: 4px;
   background-color: var(--accent-1);
-  /* border-radius: 2px; */
 }
 
 .separator {
@@ -175,11 +178,11 @@
 
 .featuresContainer {
   display: flex;
-  gap: 44px;
+  gap: 24px;
   padding: 32px 0;
 }
 
-.titleDetails {
+/* .titleDetails {
   font-size: 20px;
   font-weight: 600;
   line-height: 1.2;
@@ -205,4 +208,4 @@
   font-size: 18px;
   font-weight: 500;
   line-height: 1.4;
-}
+} */

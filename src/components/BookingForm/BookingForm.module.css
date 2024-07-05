@@ -64,3 +64,7 @@
   flex-direction: column;
   gap: 14px;
 }
+
+.btn {
+  padding: 16px 60px;
+}

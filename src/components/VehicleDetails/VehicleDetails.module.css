@@ -1,0 +1,33 @@
+.titleDetails {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: left;
+}
+
+.vehicleDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.detailsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.detail {
+  display: flex;
+  justify-content: space-between;
+
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.separator {
+  height: 1px;
+  width: 100%;
+  background-color: rgba(16, 24, 40, 0.2);
+}

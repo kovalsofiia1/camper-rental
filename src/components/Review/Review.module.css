@@ -1,0 +1,64 @@
+/* .reviewContainer {
+  width: 430px;
+} */
+
+.reviewCard {
+  display: flex;
+  width: 430px;
+  flex-direction: column;
+  gap: 16px;
+  border-radius: 8px;
+}
+
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--accent-1);
+  background-color: var(--secondary-light);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  margin-right: 16px;
+}
+
+.reviewContent {
+  flex: 1;
+}
+
+.reviewHeader {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 4px;
+}
+
+.rating {
+  display: flex;
+  gap: 4px;
+}
+
+.filledStar {
+  fill: var(--accent-2);
+  stroke: var(--accent-2);
+}
+
+.emptyStar {
+  fill: var(--secondary);
+  stroke: var(--secondary);
+}
+
+.reviewText {
+  line-height: 1.4;
+  color: var(--primary-light);
+  text-align: left;
+}
+
+.reviewUserInfo {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}

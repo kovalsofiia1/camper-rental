@@ -2,8 +2,12 @@ import { useRef, useEffect, useState } from 'react';
 import css from './CamperModal.module.css';
 import spritePath from '../../assets/icons/icons.svg';
 import FeaturesList from '../FeaturesList/FeaturesList';
-import { getKey } from '../CamperItem/helpers/handleFeatures';
 import BookingForm from '../BookingForm/BookingForm';
+import clsx from 'clsx';
+import VehicleDetails from '../VehicleDetails/VehicleDetails';
+import ReviewsList from '../ReviewsList/ReviewsList';
+import Review from '../Review/Review';
+
 
 export default function CamperModal({ camper, onClose }) {
     const [activeTab, setActiveTab] = useState('features');
@@ -49,7 +53,7 @@ export default function CamperModal({ camper, onClose }) {
                     <div className={css.secondaryContainer}>
                         <div className={css.ratingContainer}>
                                 <svg
-                                        className={css.icon}
+                                         className={clsx(css.icon, css.star)}
                                         width="16"
                                         height="16"
                                         aria-label="btn icon"
@@ -97,29 +101,31 @@ export default function CamperModal({ camper, onClose }) {
                   
                   <div className={css.separator}></div>
                   
-                  {activeTab === 'features' &&
+                    {activeTab === 'features' &&
                       (
                       <div className={css.featuresContainer}>
                         <div>
                             <div className={css.features}>
                                 <FeaturesList camper={camper} />
                             </div>
-                            <div className={css.vehicleDetails}>
-                                <p className={css.titleDetails}>Vehicle details</p>
-                                  <div className={css.separator}></div>
-                                  <div className={css.detailsContainer}>
-                                      <div className={css.detail}><span>Form</span><span>{getKey(camper.form)}</span></div>
-                                      <div className={css.detail}><span>Length</span><span>{ camper.length }</span></div>
-                                      <div className={css.detail}><span>Width</span><span>{ camper.width }</span></div>
-                                      <div className={css.detail}><span>Height</span><span>{ camper.height }</span></div>
-                                      <div className={css.detail}><span>Tank</span><span>{ camper.tank }</span></div>
-                                      <div className={css.detail}><span>Consumption</span><span>{ camper.consumption }</span></div>
-                                  </div>
-                            </div>
+                            <VehicleDetails camper={camper}/>
                           </div>
                           <BookingForm/>
                       </div>
-                        )}
+                      )}
+                  {activeTab === 'reviews' &&
+                      (
+                      <div className={css.featuresContainer}>
+                        <div>
+                            <div className={css.reviews}>
+                                  <ReviewsList reviews={camper.reviews} />
+                                  {/* <Review review={ camper.reviews[0]} /> */}
+                            </div>
+                            {/* <VehicleDetails camper={camper}/> */}
+                          </div>
+                          <BookingForm/>
+                      </div>
+                    )}
 
 
 

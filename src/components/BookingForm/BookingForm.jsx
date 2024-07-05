@@ -50,7 +50,7 @@ export default function BookingForm() {
                     <p className={css.error}>{errors.comment?.message}</p>
                 </div> 
             </div>
-      <button type="submit">Send</button>
+      <button type="submit" className={css.btn}>Send</button>
     </form>
   );
 }
