@@ -1,24 +1,33 @@
 
 import css from './CamperItem.module.css'
 import spritePath from '../../assets/icons/icons.svg';
-// import CamperFeature from '../CamperFeature/CamperFeature';
 import CamperModal from '../CamperModal/CamperModal';
 import { useState } from 'react';
 import clsx from 'clsx';
-// import { handleDetails } from './helpers/handleFeatures';
 import FeaturesList from '../FeaturesList/FeaturesList';
-
-
+import { useDispatch, useSelector } from 'react-redux';
+import { selectFavoriteIds } from '../../redux/campers/selectors';
+import { deleteFromFavorite, addToFavorite } from '../../redux/campers/slice';
+  
 export default function CamperItem({ camper }) {
     
-    const [isModalOpen, setIsModalOpen] = useState(false);
-    const handleShowMore = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const handleShowMore = () => {
         setIsModalOpen(true);
-    }
+  }
 
-    const handleCloseModal = () => {
+  const handleCloseModal = () => {
         setIsModalOpen(false);
-    }
+  }
+  
+  const favorites = useSelector(selectFavoriteIds);
+  const isFavorite = favorites.includes(camper._id);
+  const dispatch = useDispatch();
+
+  const toggleFavorite = () => {
+    if (isFavorite) { dispatch(deleteFromFavorite(camper._id)); }
+    else { dispatch(addToFavorite(camper._id)); }
+  }
 
   return (
     <div className={css.container}>
@@ -31,12 +40,12 @@ export default function CamperItem({ camper }) {
                   <h2 className={css.title}>{ camper.name }</h2>
                     <div className={css.details}>
                       <h3 className={css.title}>{ `$${camper.price},00`}</h3>
-                      <button className={css.btn}>
+                      <button className={css.btn} onClick={toggleFavorite}>
                             <svg
-                            className={css.icon}
-                            width="24"
-                            height="24"
-                            aria-label="btn icon"
+                              className={isFavorite ? clsx(css.icon, css.heart, css.active): clsx(css.icon)}
+                              width="24"
+                              height="24"
+                              aria-label="btn icon"
                             >
                             <use href={`${spritePath}#icon-heart`} />
                             </svg>
@@ -70,9 +79,6 @@ export default function CamperItem({ camper }) {
 
               <p className={css.description}>{ camper.description}</p>
               <div className={css.features}>
-                  {/* {Object.keys(features).map((key) => (
-                      features[key]!==0 && <CamperFeature icon={key} key={key} text={`${features[key]!==1 ? features[key]: ''} ${getKey(key)}`} />
-                    ))} */}
                   <FeaturesList camper={ camper } />
               </div>
               

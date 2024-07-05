@@ -62,6 +62,11 @@
   stroke: var(--accent-2);
 }
 
+.heart.active {
+  fill: var(--accent-1);
+  stroke: var(--accent-1);
+}
+
 .ratingContainer {
   display: flex;
   gap: 8px;

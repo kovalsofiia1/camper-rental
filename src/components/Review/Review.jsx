@@ -1,4 +1,3 @@
-import React from 'react'
 import css from './Review.module.css';
 import spritePath from '../../assets/icons/icons.svg';
 import clsx from 'clsx';

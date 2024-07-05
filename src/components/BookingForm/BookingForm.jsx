@@ -1,9 +1,8 @@
-import React from 'react'
 import css from './BookingForm.module.css';
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
-
+import { useState } from 'react';
 
 const schema = yup.object({
   name: yup.string().required('Name is required'),
@@ -24,7 +23,25 @@ export default function BookingForm() {
             date: '',
             comment: '',
         });
-    };
+  };
+  
+  const [inputType, setInputType] = useState('text');
+  const [inputValue, setInputValue] = useState('');
+
+  const handleFocus = () => {
+    setInputType('date');
+  };
+
+  const handleBlur = () => {
+    if (inputValue === '') {
+      setInputType('text');
+    }
+  };
+
+  const handleChange = (e) => {
+    setInputValue(e.target.value);
+  };
+
 
   return (
       <form onSubmit={handleSubmit(onSubmit)} className={css.form}>
@@ -41,7 +58,15 @@ export default function BookingForm() {
                     <input {...register("email")} placeholder='Email' className={ css.input}/>
                     <p className={css.error}>{errors.email?.message}</p>
                 </div>    
-               <div> 
+        <div> 
+            <input type={inputType}
+              className={css.input}
+              value={inputValue}
+              placeholder="Booking date"
+              onFocus={handleFocus}
+              onBlur={handleBlur}
+            onChange={handleChange} />
+          
                     <input {...register("date")} type='date' placeholder='Booking date' className={ css.input}/>
                     <p className={css.error}>{errors.date?.message && 'Select date'}</p>
                 </div>

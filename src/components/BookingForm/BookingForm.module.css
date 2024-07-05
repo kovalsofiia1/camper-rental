@@ -20,12 +20,17 @@
   border: none;
   background-color: var(--secondary-light);
   margin-bottom: 4px;
+  color: var(--primary);
+}
+.input::placeholder {
+  color: var(--primary-light);
 }
 
-.input:active,
-.input:focus,
-.input:hover {
-  background-color: var(--secondary);
+.input:active::placeholder,
+.input:focus::placeholder,
+.input:hover::placeholder {
+  color: var(--primary);
+  /* background-color: var(--secondary); */
 }
 
 .textarea {

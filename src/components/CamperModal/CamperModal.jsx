@@ -6,7 +6,6 @@ import BookingForm from '../BookingForm/BookingForm';
 import clsx from 'clsx';
 import VehicleDetails from '../VehicleDetails/VehicleDetails';
 import ReviewsList from '../ReviewsList/ReviewsList';
-import Review from '../Review/Review';
 
 
 export default function CamperModal({ camper, onClose }) {

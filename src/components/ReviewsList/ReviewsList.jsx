@@ -1,4 +1,3 @@
-import React from 'react'
 import css from './ReviewsList.module.css';
 import Review from '../Review/Review';
 

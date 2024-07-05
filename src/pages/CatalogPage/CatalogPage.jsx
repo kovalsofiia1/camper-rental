@@ -1,18 +1,22 @@
+import { useSelector } from 'react-redux';
 import CamperList from '../../components/CamperList/CamperList'
 import LoadMoreBtn from '../../components/LoadMoreBtn/LoadMoreBtn';
-
-import campers from '../../db/campers.json';
+import { selectCampers } from '../../redux/campers/selectors';
+import { useState } from 'react';
+// import campers from '../../db/campers.json';
 
 export default function CatalogPage() {
 
+  const campers = useSelector(selectCampers);
+  const [allVisible, setAllVisible] = useState(false);
   const handleLoadMore = () => {
-    console.log('load more');
+    setAllVisible(true);
   } 
 
   return (
     <div>
-      <CamperList campers={campers} />
-      <LoadMoreBtn action={handleLoadMore}/>
+      <CamperList campers={allVisible ? campers : campers.slice(0, 4)} />
+      {!allVisible && <LoadMoreBtn action={handleLoadMore} />}
     </div>
   )
 }
