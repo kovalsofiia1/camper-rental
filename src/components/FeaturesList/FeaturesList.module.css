@@ -3,5 +3,5 @@
   flex-wrap: wrap;
   gap: 8px;
   height: 96px;
-  overflow-y: scroll;
+  overflow-y: auto;
 }

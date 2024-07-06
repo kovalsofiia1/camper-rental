@@ -1,21 +1,14 @@
 import { Suspense, lazy, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
 import Layout from '../Layout/Layout';
-import { fetchCampers } from '../../redux/campers/operations';
 
 const HomePage = lazy(() => import('../../pages/HomePage/HomePage'));
 const CatalogPage = lazy(() => import('../../pages/CatalogPage/CatalogPage'));
 const FavoritesPage = lazy(() => import('../../pages/FavoritesPage/FavoritesPage'));
 
 function App() {
-
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(fetchCampers());
-  }, [dispatch]);
 
   return (
     <BrowserRouter>

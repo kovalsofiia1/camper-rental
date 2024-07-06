@@ -3,13 +3,14 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 
 axios.defaults.baseURL = "https://6686810d83c983911b02885b.mockapi.io/api";
 
-export const fetchCampers = createAsyncThunk("campers/fetchAll", async (_, thunkAPI) => {
+export const fetchCampersPage = createAsyncThunk("campers/fetchCampersPage", async ({page, limit}, thunkAPI) => {
   try {
-        const response = await axios.get("/adverts");
-        return response.data;
+        const response = await axios.get(`/adverts?limit=${limit}&page=${page}`);
+        console.log(response);
+      return response.data;
   } catch (e) {
-        console.log(e);
-        return thunkAPI.rejectWithValue(e.message);
+      console.log(e);
+      return thunkAPI.rejectWithValue(e.message);
   }
 });
 

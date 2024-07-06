@@ -1,3 +1,9 @@
 .page {
   padding-top: 100px;
+  flex: 1;
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
 }
