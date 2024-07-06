@@ -3,14 +3,14 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://kovalsofiia1.github.io/camper-rental",
+  "homepage": "https://kovalsofiia1.github.io/camper-rental/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist -m 'Deploy React app to GitHub Pages'"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.7.0",
@@ -21,6 +21,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.52.1",
+    "react-loader-spinner": "^6.1.6",
     "react-redux": "^9.1.2",
     "redux": "^5.0.1",
     "yup": "^1.4.0"

@@ -1,5 +1,4 @@
-import { Suspense, lazy, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { Suspense, lazy } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
 import Layout from '../Layout/Layout';
@@ -12,7 +11,6 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Suspense fallback={<div>Loading...</div>}>
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<HomePage />} />
@@ -21,7 +19,6 @@ function App() {
             <Route path="*" element={<Navigate to="/" replace />} />
           </Route>
         </Routes>
-      </Suspense>
     </BrowserRouter>
   );
 }
