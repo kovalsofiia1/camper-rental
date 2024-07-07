@@ -108,14 +108,6 @@ const Filter = ({onClose}) => {
                   </div>
                 ))}
               </div>
-              {/* {equipment.map((item, index) => (
-                <div key={index}>
-                  <label>
-                    <input type="checkbox" {...register(`equipment.${item}`)} />
-                    {capitalizeFirstLetter(item)}
-                  </label>
-                </div>
-              ))} */}
             </div>
           </div>
           <div className={css.container}>

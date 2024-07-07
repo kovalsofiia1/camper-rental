@@ -30,7 +30,6 @@
 .input:focus::placeholder,
 .input:hover::placeholder {
   color: var(--primary);
-  /* background-color: var(--secondary); */
 }
 
 .textarea {

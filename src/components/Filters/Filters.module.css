@@ -7,7 +7,6 @@
 }
 
 .backdrop {
-  /* width: 29px; */
   position: fixed;
   width: 100%;
   height: calc(100vh - 96px);
