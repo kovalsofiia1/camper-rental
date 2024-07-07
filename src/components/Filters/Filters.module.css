@@ -5,3 +5,128 @@
 
   padding: 64px 24px;
 }
+.backdrop {
+  width: 273px;
+}
+.filters {
+  min-height: 100vh;
+  width: 293px;
+  background-color: var(--white);
+}
+
+.label {
+  font-weight: 600;
+  line-height: 24px;
+  text-align: left;
+  color: rgba(16, 24, 40, 0.6);
+}
+
+.bigLabel {
+  font-size: 20px;
+  line-height: 1.2;
+  text-align: left;
+}
+
+.input {
+  width: 100%;
+  padding: 18px 18px 18px 42px;
+  gap: 10px;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  background-color: var(--secondary-light);
+  margin-bottom: 4px;
+  color: var(--primary);
+
+  position: relative;
+}
+.input::placeholder {
+  color: var(--primary-light);
+}
+
+.input:active::placeholder,
+.input:focus::placeholder,
+.input:hover::placeholder {
+  color: var(--primary);
+}
+
+.input:active .mapIcon,
+.input:focus .mapIcon,
+.input:hover .mapIcon {
+  stroke: var(--primary);
+}
+
+.icon {
+  fill: transparent;
+  stroke: var(--primary);
+}
+.mapIcon {
+  position: absolute;
+  left: 18px;
+  top: 48%;
+  transform: translateY(50%);
+  fill: transparent;
+  stroke: var(--primary-light);
+}
+
+.radioLabel {
+  cursor: pointer;
+  user-select: none;
+  border: 1px solid #10182833;
+  border-radius: 10px;
+  padding: 12px;
+  min-width: 100px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.radioInput {
+  display: none;
+}
+
+.radioInput:checked + .radioLabel {
+  border: 1px solid var(--accent-1);
+}
+
+.name {
+  font-weight: 500;
+  text-align: center;
+  color: var(--primary);
+  max-width: 80px;
+}
+
+.separator {
+  height: 1px;
+  width: 100%;
+  background-color: rgba(16, 24, 40, 0.1);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: start;
+}

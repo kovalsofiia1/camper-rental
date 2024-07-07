@@ -1,11 +1,12 @@
 import { useForm } from 'react-hook-form';
-import { capitalizeFirstLetter } from '../CamperItem/helpers/handleFeatures';
+import { capitalizeFirstLetter, getKey } from '../CamperItem/helpers/handleFeatures';
 import css from './Filters.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { resetPage, setFilters, setPage } from '../../redux/campers/slice';
 import { fetchCampersPage } from '../../redux/campers/operations';
 import { selectCurrentPage, selectFilters, selectMoreToLoad, selectPerPage } from '../../redux/campers/selectors';
 import { useEffect } from 'react';
+import spritePath from '../../assets/icons/icons.svg';
 
 const equipment = ['AC', 'automatic', 'kitchen', 'TV', 'shower'];
 const types = ['panelTruck', 'fullyIntegrated', 'alcove', 'all'];
@@ -38,43 +39,105 @@ const Filter = () => {
   }, [dispatch, currentPage, perPage, filters]);
 
   return (
-    <div>
-      <form onSubmit={handleSubmit(onSubmit)} className={css.form}>
-        <div>
-          <label>
-            Location
-            <input type="text" {...register('location')} placeholder='Location' />
-          </label>
-        </div>
-        <div>
-          <label>
-            Filters
-            {equipment.map((item, index) => (
-              <div key={index}>
-                <label>
-                  <input type="checkbox" {...register(`equipment.${item}`)} />
-                  {capitalizeFirstLetter(item)}
-                </label>
+    <div className={css.backdrop}>
+      <div className={css.filters}>
+        <form onSubmit={handleSubmit(onSubmit)} className={css.form}>
+          <div className={css.inputContainer}>
+            <p className={css.label}>
+              Location
+            </p>
+            
+            <input type="text" {...register('location')} placeholder='City' className={css.input} />
+            <svg
+                className={css.mapIcon}
+                width="18"
+                height="20"
+                aria-label={`pin icon`}
+              >
+                <use href={`${spritePath}#icon-map-pin`} /> 
+              </svg>
+          </div>
+            
+          <div className={css.inputContainer}>
+              <p className={css.label}>Filters</p>
+            <div className={css.container}>
+              <h2 className={css.bigLabel}>
+                  Vehicle equipment
+              </h2>
+              <div className={css.separator}></div>
+              <div className={css.options}>
+                {equipment.map((item, index) => (
+                  <div key={index} className={css.radioOption}>
+                    <input
+                      type="radio"
+                      id={item}
+                      {...register('equipment')}
+                      value={item}
+                      className={css.radioInput}
+                    />
+                    <label htmlFor={item} className={css.radioLabel}>
+                      <svg
+                        className={css.icon}
+                        width="40"
+                        height="28"
+                        aria-label={`${item} icon`} 
+                      >
+                        <use href={`${spritePath}#icon-${item}`} /> 
+                      </svg>
+                      <p className={css.name}>{capitalizeFirstLetter(getKey(item))}</p>
+                    </label>
+                  </div>
+                ))}
               </div>
-            ))}
-          </label>
-        </div>
-        <div>
-          <label>
-            Vehicle Type
-            {types.map((type, index) => (
-              <div key={index}>
-                <label>
-                  <input type="radio" value={type} {...register('type')} />
-                  {capitalizeFirstLetter(type)}
-                </label>
-              </div>
-            ))}
-          </label>
-        </div>
-        <button type="submit">Search</button>
-      </form>
-      <button onClick={handleShowAll}>Show all</button>
+              {/* {equipment.map((item, index) => (
+                <div key={index}>
+                  <label>
+                    <input type="checkbox" {...register(`equipment.${item}`)} />
+                    {capitalizeFirstLetter(item)}
+                  </label>
+                </div>
+              ))} */}
+            </div>
+          </div>
+          <div className={css.container}>
+            <h2 className={css.bigLabel}>
+                Vehicle Type
+              </h2>
+              <div className={css.separator}></div>
+            <div className={css.options}>
+              {types.map((type, index) => (
+                <div key={index} className={css.radioOption}>
+                  <input
+                    type="radio"
+                    id={`radio-${type}`}
+                    {...register('type')}
+                    value={type}
+                    className={css.radioInput}
+                  />
+                  <label htmlFor={`radio-${type}`} className={css.radioLabel}>
+                    <svg
+                      className={css.icon}
+                      width="40"
+                      height="28"
+                      aria-label={`${type} icon`} // Example label for accessibility
+                    >
+                      <use href={`${spritePath}#icon-${type}`} /> 
+                    </svg>
+                    <p className={css.name}>{capitalizeFirstLetter(getKey(type))}</p>
+                  </label>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className={css.controls}>
+            <button type="submit">Search</button>
+            <div className={css.separator}></div>
+            <button onClick={handleShowAll}>Show all campers</button>
+          </div>
+          
+        </form>
+       
+      </div>
     </div>
   );
 };
