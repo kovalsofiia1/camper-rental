@@ -1,1 +1,0 @@
-import{a as t,u as r,j as e,M as o}from"./index-8193XJ7I.js";import{i,C as n}from"./CamperList-DJpl98Fy.js";function m(){const s=t(i),a=r();return s.length>0?e.jsx(n,{campers:s}):e.jsxs(o,{children:[e.jsx("h2",{children:"No campers were added to favorite"}),e.jsx("button",{onClick:()=>{a("/catalog")},children:"Explore campers now"})]})}export{m as default};
