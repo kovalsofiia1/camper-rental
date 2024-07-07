@@ -15,7 +15,7 @@
 
 .filters {
   height: calc(100vh - 96px);
-  width: 293px;
+  width: 400px;
   background-color: var(--white);
   overflow-y: auto;
 }
@@ -135,4 +135,10 @@
   flex-direction: column;
   gap: 16px;
   align-items: start;
+}
+
+@media screen and (max-width: 768px) {
+  .filters {
+    width: 350px;
+  }
 }
