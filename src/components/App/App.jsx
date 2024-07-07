@@ -1,5 +1,5 @@
 import { lazy } from 'react';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
 import Layout from '../Layout/Layout';
 
@@ -10,7 +10,7 @@ const FavoritesPage = lazy(() => import('../../pages/FavoritesPage/FavoritesPage
 function App() {
 
   return (
-    <BrowserRouter>
+    <HashRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<HomePage />} />
@@ -19,7 +19,7 @@ function App() {
             <Route path="*" element={<Navigate to="/" replace />} />
           </Route>
         </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
