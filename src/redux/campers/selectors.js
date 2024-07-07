@@ -6,6 +6,8 @@ export const selectFavoriteIds = (state) => state.campers.favorites;
 export const selectCurrentPage = (state) => state.campers.currentPage;
 export const selectPerPage = (state) => state.campers.perPage;
 export const selectMoreToLoad = (state) => state.campers.moreToLoad;
+export const selectFilters = (state) => state.campers.filters;
+export const selectError = (state) => state.campers.error;
  
 export const selectFavorites = createSelector(
     [selectCampers, selectFavoriteIds],

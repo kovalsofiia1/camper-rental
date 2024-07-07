@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
@@ -7,7 +7,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 import './custom-datepicker.css';
 import spritePath from '../../assets/icons/icons.svg';
 import { registerLocale } from "react-datepicker";
-import enGB from "date-fns/locale/en-GB"; // Import the locale
+import enGB from "date-fns/locale/en-GB"; 
 import css from './BookingForm.module.css';
 import { format } from 'date-fns';
 
@@ -19,7 +19,6 @@ const customLocale = {
   }
 };
 
-// Register the custom locale
 registerLocale("custom-en-GB", customLocale);
 
 const schema = yup.object({
@@ -43,7 +42,8 @@ export default function BookingForm() {
       date: format(data.date, 'yyyy-MM-dd'),
      };
      
-    console.log(formattedData);
+     console.log(formattedData);
+     //TODO: implement booking
     reset({
       name: '',
       email: '',
