@@ -1,4 +1,3 @@
-import React from 'react'
 import css from './FilterButton.module.css';
 import spritePath from '../../assets/icons/icons.svg';
 
