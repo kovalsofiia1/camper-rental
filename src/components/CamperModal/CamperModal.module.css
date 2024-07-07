@@ -4,7 +4,7 @@
   position: fixed;
   top: 0;
   left: 0;
-
+  z-index: 1000;
   background-color: rgba(17, 18, 19, 0.4);
 }
 
@@ -55,6 +55,7 @@
   padding: 0 0 24px;
   overflow-x: auto;
   flex-wrap: nowrap;
+  width: 100%;
 }
 
 .imgContainer {
@@ -182,30 +183,31 @@
   padding: 32px 0;
 }
 
-/* .titleDetails {
-  font-size: 20px;
-  font-weight: 600;
-  line-height: 1.2;
-  text-align: left;
+@media screen and (max-width: 1024px) {
+  .modal {
+    width: 90%;
+  }
+
+  .featuresContainer {
+    flex-direction: column;
+  }
+
+  .features {
+    width: 100%;
+  }
+
+  .imgContainer {
+    width: 30%;
+    height: 200px;
+  }
 }
 
-.vehicleDetails {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
+@media screen and (max-width: 768px) {
+  .modal {
+    font-size: 14px;
+  }
+
+  .detail {
+    font-size: 14px;
+  }
 }
-
-.detailsContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.detail {
-  display: flex;
-  justify-content: space-between;
-
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 1.4;
-} */

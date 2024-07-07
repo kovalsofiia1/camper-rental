@@ -108,11 +108,47 @@
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
-  font-size: 1.2rem;
+  font-size: 20px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .exploreButton:hover {
   background-color: #004d40;
+}
+
+@media screen and (max-width: 1024px) {
+  .title {
+    font-size: 48px;
+  }
+
+  .subtitle,
+  .sectionSubtitle {
+    font-size: 20px;
+  }
+
+  .btn {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .title,
+  .sectionTitle,
+  .camperName {
+    font-size: 28px;
+  }
+
+  .subtitle,
+  .sectionSubtitle,
+  .camperDescription {
+    font-size: 16px;
+  }
+
+  .camperName {
+    font-size: 28px;
+  }
+  .btn {
+    font-size: 14px;
+  }
 }

@@ -3,15 +3,22 @@
   flex-direction: column;
   gap: 44px;
 
-  padding: 64px 24px;
+  padding: 24px;
 }
+
 .backdrop {
-  width: 273px;
+  /* width: 29px; */
+  position: fixed;
+  width: 100%;
+  height: calc(100vh - 96px);
+  background-color: rgba(16, 24, 40, 0.2);
 }
+
 .filters {
-  min-height: 100vh;
+  height: calc(100vh - 96px);
   width: 293px;
   background-color: var(--white);
+  overflow-y: auto;
 }
 
 .label {

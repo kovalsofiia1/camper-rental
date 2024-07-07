@@ -2,12 +2,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import CamperList from '../../components/CamperList/CamperList'
 import LoadMoreBtn from '../../components/LoadMoreBtn/LoadMoreBtn';
 import { selectCampers, selectCurrentPage, selectError, selectFilters, selectMoreToLoad, selectPerPage } from '../../redux/campers/selectors';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { fetchCampersPage } from '../../redux/campers/operations';
 import { incrementPage, setPage } from '../../redux/campers/slice';
 import Filters from '../../components/Filters/Filters';
 import css from './CatalogPage.module.css';
 import Message from '../../components/Message/Message';
+import FilterButton from '../../components/FilterButton/FilterButton';
 
 
 export default function CatalogPage() {
@@ -32,11 +33,18 @@ export default function CatalogPage() {
     dispatch(incrementPage());
   } 
 
+  const [filtersOpen, setFiltersOpen] = useState(false);
+
+  const handleFilters = () => {
+    filtersOpen ? setFiltersOpen(false) : setFiltersOpen(true);
+  }
+
   return (
     <div className={css.layout}>
-      <Filters/>
-      <div>
-        {!error ? <CamperList campers={campers}/> : <Message>No campers found for your request</Message>}
+      {filtersOpen && <Filters onClose={()=> setFiltersOpen(false)} />}
+      <div className={css.content}>
+        <FilterButton action={ handleFilters } />
+        {!error ? <CamperList campers={campers}/> : <Message><h2>No campers found for your request</h2></Message>}
         {moreToLoad && <LoadMoreBtn action={handleLoadMore} />}
       </div>
     </div>

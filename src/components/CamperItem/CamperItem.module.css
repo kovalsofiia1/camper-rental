@@ -99,3 +99,69 @@
   height: 96px;
   overflow-y: auto;
 }
+
+@media screen and (max-width: 1024px) {
+  .container {
+    width: 90%;
+  }
+
+  .descriptionContainer {
+    width: 70%;
+  }
+
+  .imgContainer {
+    width: 30%;
+  }
+  .description {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    height: 100%;
+    font-size: 14px;
+    gap: 12px;
+    flex-direction: column;
+  }
+
+  .mainContainer {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .secondaryContainer {
+    flex-direction: column;
+    gap: 4px;
+    align-items: start;
+  }
+
+  .descriptionContainer {
+    gap: 12px;
+    width: 100%;
+  }
+
+  .imgContainer {
+    align-self: center;
+    width: 60%;
+    height: 100%;
+  }
+
+  .title {
+    font-size: 16px;
+  }
+
+  .heart {
+    width: 20px;
+    height: 20px;
+  }
+
+  .details {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .features {
+    display: none;
+  }
+}

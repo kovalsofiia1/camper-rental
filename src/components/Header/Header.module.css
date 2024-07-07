@@ -41,3 +41,17 @@
 .title {
   font-size: 24px;
 }
+
+@media screen and (max-width: 768px) {
+  .link {
+    font-size: 14px;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+
+  .header {
+    padding: 24px 24px;
+  }
+}

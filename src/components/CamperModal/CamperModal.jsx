@@ -103,7 +103,7 @@ export default function CamperModal({ camper, onClose }) {
                     {activeTab === 'features' &&
                       (
                       <div className={css.featuresContainer}>
-                        <div>
+                        <div className={css.left}>
                             <div className={css.features}>
                                 <FeaturesList camper={camper} />
                             </div>
@@ -115,12 +115,10 @@ export default function CamperModal({ camper, onClose }) {
                   {activeTab === 'reviews' &&
                       (
                       <div className={css.featuresContainer}>
-                        <div>
+                        <div className={css.left}>
                             <div className={css.reviews}>
                                   <ReviewsList reviews={camper.reviews} />
-                                  {/* <Review review={ camper.reviews[0]} /> */}
                             </div>
-                            {/* <VehicleDetails camper={camper}/> */}
                           </div>
                           <BookingForm/>
                       </div>

@@ -42,7 +42,7 @@ export default function CamperItem({ camper }) {
                       <h3 className={css.title}>{ `$${camper.price},00`}</h3>
                       <button className={css.btn} onClick={toggleFavorite}>
                             <svg
-                              className={isFavorite ? clsx(css.icon, css.heart, css.active): clsx(css.icon)}
+                              className={isFavorite ? clsx(css.icon, css.heart, css.active): clsx(css.icon, css.heart)}
                               width="24"
                               height="24"
                               aria-label="btn icon"

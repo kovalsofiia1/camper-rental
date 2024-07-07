@@ -4,14 +4,14 @@ import css from './Filters.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { resetPage, setFilters, setPage } from '../../redux/campers/slice';
 import { fetchCampersPage } from '../../redux/campers/operations';
-import { selectCurrentPage, selectFilters, selectMoreToLoad, selectPerPage } from '../../redux/campers/selectors';
-import { useEffect } from 'react';
+import { selectCurrentPage, selectFilters, selectPerPage } from '../../redux/campers/selectors';
+import { useEffect, useRef } from 'react';
 import spritePath from '../../assets/icons/icons.svg';
 
 const equipment = ['AC', 'automatic', 'kitchen', 'TV', 'shower'];
 const types = ['panelTruck', 'fullyIntegrated', 'alcove', 'all'];
 
-const Filter = () => {
+const Filter = ({onClose}) => {
   const currentPage = useSelector(selectCurrentPage);
   const perPage = useSelector(selectPerPage);
   const filters = useSelector(selectFilters);
@@ -38,9 +38,30 @@ const Filter = () => {
     }
   }, [dispatch, currentPage, perPage, filters]);
 
+   const wrapperRef = useRef(null);
+
+  const handleClickOutside = (event) => {
+    if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
+      onClose();
+    }
+    };
+
+    const handleDocumentKeyDown = event => {
+    if (event.key === 'Escape') {
+      onClose();
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('keydown', handleDocumentKeyDown);
+    return () => {
+      document.removeEventListener('keydown', handleDocumentKeyDown);
+    };
+  }, [onClose]);
+
   return (
-    <div className={css.backdrop}>
-      <div className={css.filters}>
+    <div className={css.backdrop} onClick={handleClickOutside}>
+      <div className={css.filters} ref={wrapperRef}>
         <form onSubmit={handleSubmit(onSubmit)} className={css.form}>
           <div className={css.inputContainer}>
             <p className={css.label}>
@@ -69,10 +90,8 @@ const Filter = () => {
                 {equipment.map((item, index) => (
                   <div key={index} className={css.radioOption}>
                     <input
-                      type="radio"
                       id={item}
-                      {...register('equipment')}
-                      value={item}
+                      type="checkbox" {...register(`equipment.${item}`)}
                       className={css.radioInput}
                     />
                     <label htmlFor={item} className={css.radioLabel}>

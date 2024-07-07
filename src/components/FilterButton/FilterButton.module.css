@@ -1,0 +1,10 @@
+.btn {
+  padding: 12px;
+  position: fixed;
+  top: 124px;
+  right: 24px;
+}
+
+.icon {
+  fill: var(--white);
+}

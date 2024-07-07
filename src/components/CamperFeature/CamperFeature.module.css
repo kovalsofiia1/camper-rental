@@ -14,3 +14,9 @@
   fill: transparent;
   stroke: var(--primary);
 }
+
+@media screen and (max-width: 1024px) {
+  .featureItem {
+    padding: 4px 8px;
+  }
+}
