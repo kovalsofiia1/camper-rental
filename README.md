@@ -13,7 +13,7 @@ This project is a camper rental application designed for a company that offers c
 
 3. **Favorites Page**: Displays advertisements that the user has added to their favorites.
 
-![Знімок екрана 2024-07-17 140916](https://github.com/user-attachments/assets/09fc004e-b2f2-47d4-8983-164304974549)
+![Знімок екрана 2024-07-17 140910](https://github.com/user-attachments/assets/c3fa496b-0da7-484d-99c2-071012b7fcba)
 
 
 ## Technologies Used
